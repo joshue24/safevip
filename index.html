@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Safe VIP Panama — Private Transport</title>
+<meta name="description" content="Premium private transport in Panama. Airport transfers, city tours, executive & group rides. Up to 7 passengers.">
+<style>
+:root{
+  --green:#1D9E75;--green-dk:#0F6E56;--green-lite:rgba(29,158,117,.13);
+  --gold:#C49A2A;--ink:#0A1628;--ink2:#0D1C35;
+  --white:#FFFFFF;--wmid:#B8C4D0;--wfade:#5A6A7A;
+  --sep:rgba(255,255,255,.07);--border:rgba(29,158,117,.32);
+  --radius:16px;--shadow:0 4px 24px rgba(0,0,0,.45);
+  color-scheme:dark;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{min-height:100%;background:var(--ink);color:var(--wmid);
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,sans-serif}
+body{padding-bottom:env(safe-area-inset-bottom,16px)}
+.page{max-width:400px;margin:0 auto;padding:max(env(safe-area-inset-top),20px) 16px 24px}
+
+/* ── lang bar ── */
+.lang-bar{display:flex;gap:6px;justify-content:center;margin-bottom:14px}
+.lang-btn{padding:5px 18px;border-radius:100px;font-size:12px;font-weight:600;
+  border:1px solid rgba(255,255,255,.12);background:transparent;color:var(--wfade);
+  cursor:pointer;transition:all .15s}
+.lang-btn.active{background:var(--green);color:#fff;border-color:var(--green)}
+
+/* ── hero ── */
+.hero{background:var(--ink2);border:1px solid var(--border);border-radius:var(--radius);
+  padding:22px 20px 18px;position:relative;overflow:hidden;margin-bottom:11px;box-shadow:var(--shadow)}
+.hero::before{content:'';position:absolute;left:0;top:0;width:4px;height:100%;background:var(--green)}
+.hero-tag{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--green);
+  font-weight:600;margin-bottom:6px}
+.hero-name{font-size:23px;font-weight:700;color:var(--white);letter-spacing:-.3px;line-height:1.1}
+.hero-sub{font-size:11px;color:var(--wfade);margin-top:4px}
+.flag{position:absolute;top:19px;right:16px;display:flex;gap:4px}
+.fd{width:9px;height:9px;border-radius:50%}
+.hdiv{height:1px;background:var(--sep);margin:14px 0 12px}
+.hero-vehicle{display:flex;align-items:center;gap:10px}
+.vi{width:32px;height:32px;border-radius:8px;background:var(--green-lite);
+  display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;
+  border:1px solid rgba(29,158,117,.18)}
+.vt{font-size:11px;color:var(--wmid);line-height:1.55}
+.vt strong{color:var(--white);font-weight:600}
+
+/* ── hours banner ── */
+.hours{background:rgba(196,154,42,.09);border:1px solid rgba(196,154,42,.28);
+  border-radius:12px;padding:11px 14px;margin-bottom:11px}
+.hours-title{font-size:9.5px;text-transform:uppercase;letter-spacing:.1em;
+  color:var(--gold);font-weight:700;margin-bottom:7px;display:flex;align-items:center;gap:5px}
+.hours-grid{display:grid;grid-template-columns:auto 1fr;gap:3px 10px;align-items:center}
+.hday{font-size:11px;font-weight:600;color:var(--wmid)}
+.htime{font-size:11px;color:var(--gold)}
+
+/* ── cta ── */
+.cta-row{display:flex;gap:8px;margin-bottom:11px}
+.btn{flex:1;display:flex;align-items:center;justify-content:center;gap:7px;
+  padding:13px 8px;border-radius:12px;font-size:13px;font-weight:600;
+  text-decoration:none;transition:opacity .15s;border:none;cursor:pointer}
+.btn-wa{background:var(--green);color:#fff}
+.btn-call{background:var(--green-lite);color:var(--green);border:1px solid var(--border)}
+.btn:active{opacity:.75}
+.bi{width:18px;height:18px;flex-shrink:0}
+
+/* ── section label ── */
+.sl{font-size:9px;text-transform:uppercase;letter-spacing:.12em;color:var(--wfade);
+  font-weight:600;margin-bottom:7px;padding-left:2px}
+
+/* ── services ── */
+.card{background:var(--ink2);border:1px solid var(--sep);border-radius:var(--radius);
+  padding:14px;margin-bottom:11px;box-shadow:var(--shadow)}
+.srow{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--sep)}
+.srow:first-child{padding-top:0}.srow:last-child{border-bottom:none;padding-bottom:0}
+.si{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;
+  font-size:15px;flex-shrink:0;background:var(--green-lite);border:1px solid rgba(29,158,117,.18)}
+.sinfo{flex:1;min-width:0}
+.sn{font-size:12px;font-weight:600;color:var(--white);line-height:1.3}
+.snote{font-size:10px;color:var(--wfade);margin-top:1px}
+.sp{font-size:13px;font-weight:700;color:var(--green);flex-shrink:0}
+
+/* ── pillars ── */
+.pillars{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:11px}
+.pillar{background:var(--ink2);border:1px solid var(--sep);border-radius:12px;padding:12px 10px}
+.pi{font-size:19px;margin-bottom:4px}
+.pt{font-size:11px;font-weight:700;color:var(--white);margin-bottom:2px}
+.pb{font-size:10px;color:var(--wfade);line-height:1.45}
+
+/* ── coverage ── */
+.cov{background:rgba(196,154,42,.07);border-radius:12px;padding:11px 13px;
+  border:1px solid rgba(196,154,42,.22);margin-bottom:11px}
+.covt{font-size:10px;font-weight:700;color:var(--gold);margin-bottom:6px;
+  display:flex;align-items:center;gap:4px}
+.zones{display:flex;flex-wrap:wrap;gap:5px}
+.zt{font-size:10px;background:rgba(196,154,42,.1);color:var(--gold);
+  padding:3px 9px;border-radius:100px;font-weight:500}
+
+/* ── trust ── */
+.trust{display:flex;gap:6px;margin-bottom:11px;flex-wrap:wrap}
+.tb{flex:1;min-width:100px;display:flex;align-items:center;gap:6px;
+  background:var(--ink2);border-radius:10px;padding:8px 10px;
+  border:1px solid var(--sep);font-size:10px;font-weight:600;color:var(--wmid)}
+.tb span{font-size:14px}
+
+/* ── footer ── */
+.footer{text-align:center;padding:5px 0 2px;font-size:10px;color:var(--wfade)}
+.footer strong{color:var(--green)}
+
+/* ── animations ── */
+@keyframes fu{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.page>*{animation:fu .3s ease both}
+.page>:nth-child(1){animation-delay:.00s}.page>:nth-child(2){animation-delay:.04s}
+.page>:nth-child(3){animation-delay:.08s}.page>:nth-child(4){animation-delay:.12s}
+.page>:nth-child(5){animation-delay:.16s}.page>:nth-child(6){animation-delay:.20s}
+.page>:nth-child(7){animation-delay:.24s}.page>:nth-child(8){animation-delay:.28s}
+.page>:nth-child(9){animation-delay:.32s}.page>:nth-child(10){animation-delay:.36s}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="lang-bar">
+    <button class="lang-btn" id="btn-en" onclick="setLang('en')">🇺🇸 English</button>
+    <button class="lang-btn" id="btn-es" onclick="setLang('es')">🇵🇦 Español</button>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="flag">
+      <div class="fd" style="background:#CC2020"></div>
+      <div class="fd" style="background:#ddd;outline:1px solid #555;outline-offset:-1px"></div>
+      <div class="fd" style="background:#1B3FA0"></div>
+    </div>
+    <div class="hero-tag" id="t-tag">PRIVATE TRANSPORT · PANAMA</div>
+    <div class="hero-name">Safe VIP Panama</div>
+    <div class="hero-sub" id="t-sub">Executive · Airport · City Tours · Groups</div>
+    <div class="hdiv"></div>
+    <div class="hero-vehicle">
+      <div class="vi">🚙</div>
+      <div class="vt" id="t-vehicle">
+        <strong>Premium SUV</strong> · Up to 7 passengers<br>
+        Air-conditioned · Wi-Fi · Luggage space
+      </div>
+    </div>
+  </div>
+
+  <!-- HOURS -->
+  <div class="hours">
+    <div class="hours-title">🕐 <span id="t-hours-title">SERVICE HOURS</span></div>
+    <div class="hours-grid">
+      <div class="hday" id="t-d1">Friday</div>
+      <div class="htime">5:00 PM – 11:00 PM</div>
+      <div class="hday" id="t-d2">Saturday</div>
+      <div class="htime">6:00 AM – 6:00 PM</div>
+      <div class="hday" id="t-d3">Sunday</div>
+      <div class="htime">6:00 AM – 12:00 PM</div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-row">
+    <a class="btn btn-wa" href="https://wa.me/50769211424">
+      <svg class="bi" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <span id="t-btn-wa">WhatsApp</span>
+    </a>
+    <a class="btn btn-call" href="tel:+50769211424">
+      <svg class="bi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      <span id="t-btn-call">Call</span>
+    </a>
+  </div>
+
+  <!-- SERVICES -->
+  <div class="sl" id="t-sl-svc">OUR SERVICES</div>
+  <div class="card">
+    <div class="srow"><div class="si">✈️</div><div class="sinfo"><div class="sn" id="t-s1">Airport Transfer (PTY)</div><div class="snote" id="t-s1n">Fixed price · No surge pricing</div></div><div class="sp">from $28</div></div>
+    <div class="srow"><div class="si">🏛️</div><div class="sinfo"><div class="sn" id="t-s2">City Tour</div><div class="snote" id="t-s2n">Casco Viejo · Canal · Amador</div></div><div class="sp">from $80</div></div>
+    <div class="srow"><div class="si">🍽️</div><div class="sinfo"><div class="sn" id="t-s3">Restaurants & Nightlife</div><div class="snote" id="t-s3n">Group outings · Comfort rides</div></div><div class="sp">from $25</div></div>
+    <div class="srow"><div class="si">💼</div><div class="sinfo"><div class="sn" id="t-s4">Executive & Group Transport</div><div class="snote" id="t-s4n">Corporate · Events · Hourly</div></div><div class="sp">from $30</div></div>
+  </div>
+
+  <!-- PILLARS -->
+  <div class="sl" id="t-sl-why">WHY SAFE VIP PANAMA</div>
+  <div class="pillars">
+    <div class="pillar"><div class="pi">🔒</div><div class="pt" id="t-p1">Safe & Trusted</div><div class="pb" id="t-p1b">Verified driver, professional always</div></div>
+    <div class="pillar"><div class="pi">⏱️</div><div class="pt" id="t-p2">Always On Time</div><div class="pb" id="t-p2b">Punctuality guaranteed</div></div>
+    <div class="pillar"><div class="pi">💰</div><div class="pt" id="t-p3">Fixed Price</div><div class="pb" id="t-p3b">No surge · agreed upfront</div></div>
+    <div class="pillar"><div class="pi">🚙</div><div class="pt" id="t-p4">Premium 2026 SUV</div><div class="pb" id="t-p4b">Up to 7 passengers + luggage</div></div>
+  </div>
+
+  <!-- COVERAGE -->
+  <div class="cov">
+    <div class="covt">📍 <span id="t-cov">Service Area</span></div>
+    <div class="zones">
+      <div class="zt">Panama City</div><div class="zt">Panama Oeste</div>
+      <div class="zt">La Chorrera</div><div class="zt">Arraiján</div>
+      <div class="zt">PTY Airport</div><div class="zt" id="t-more">& surroundings</div>
+    </div>
+  </div>
+
+  <!-- TRUST -->
+  <div class="trust">
+    <div class="tb"><span>🇺🇸</span><span id="t-t1">English OK</span></div>
+    <div class="tb"><span>🧳</span><span id="t-t2">Luggage space</span></div>
+    <div class="tb"><span>📱</span><span id="t-t3">Book on WhatsApp</span></div>
+  </div>
+
+  <div class="footer">
+    <strong>Safe VIP Panama</strong><br>
+    <span id="t-ft">+507 6921-1424</span>
+  </div>
+</div>
+
+<script>
+const T={
+  en:{
+    tag:'PRIVATE TRANSPORT · PANAMA',
+    sub:'Executive · Airport · City Tours · Groups',
+    vehicle:'<strong>Premium SUV</strong> · Up to 7 passengers<br>Air-conditioned · Wi-Fi · Luggage space',
+    'hours-title':'SERVICE HOURS',
+    d1:'Friday',d2:'Saturday',d3:'Sunday',
+    'btn-wa':'WhatsApp','btn-call':'Call',
+    'sl-svc':'OUR SERVICES',
+    s1:'Airport Transfer (PTY)',s1n:'Fixed price · No surge pricing',
+    s2:'City Tour',s2n:'Casco Viejo · Canal · Amador',
+    s3:'Restaurants & Nightlife',s3n:'Group outings · Comfort rides',
+    s4:'Executive & Group Transport',s4n:'Corporate · Events · Hourly',
+    'sl-why':'WHY SAFE VIP PANAMA',
+    p1:'Safe & Trusted',p1b:'Verified driver, professional always',
+    p2:'Always On Time',p2b:'Punctuality guaranteed',
+    p3:'Fixed Price',p3b:'No surge · agreed upfront',
+    p4:'Premium 2026 SUV',p4b:'Up to 7 passengers + luggage',
+    cov:'Service Area',more:'& surroundings',
+    t1:'English OK',t2:'Luggage space',t3:'Book on WhatsApp',
+    ft:'+507 6921-1424'
+  },
+  es:{
+    tag:'TRANSPORTE PRIVADO · PANAMÁ',
+    sub:'Ejecutivo · Aeropuerto · City Tours · Grupos',
+    vehicle:'<strong>SUV Premium</strong> · Hasta 7 pasajeros<br>Aire acondicionado · Wi-Fi · Espacio para equipaje',
+    'hours-title':'HORARIO DE SERVICIO',
+    d1:'Viernes',d2:'Sábado',d3:'Domingo',
+    'btn-wa':'WhatsApp','btn-call':'Llamar',
+    'sl-svc':'NUESTROS SERVICIOS',
+    s1:'Traslado Aeropuerto (PTY)',s1n:'Precio fijo · Sin sorpresas',
+    s2:'City Tour',s2n:'Casco Viejo · Canal de Panamá · Amador',
+    s3:'Restaurantes y Salidas',s3n:'Salidas grupales · Viajes comfort',
+    s4:'Transporte Ejecutivo y Grupos',s4n:'Corporativo · Eventos · Por hora',
+    'sl-why':'POR QUÉ SAFE VIP PANAMA',
+    p1:'Seguro y Confiable',p1b:'Conductor verificado, profesional siempre',
+    p2:'Siempre Puntual',p2b:'Puntualidad garantizada',
+    p3:'Precio Fijo',p3b:'Sin sorpresas · acordado antes',
+    p4:'SUV Premium 2026',p4b:'Hasta 7 pasajeros + equipaje',
+    cov:'Área de Servicio',more:'y alrededores',
+    t1:'English OK',t2:'Espacio equipaje',t3:'Reserva por WhatsApp',
+    ft:'+507 6921-1424'
+  }
+};
+
+function setLang(l){
+  const d=T[l];
+  document.getElementById('btn-en').classList.toggle('active',l==='en');
+  document.getElementById('btn-es').classList.toggle('active',l==='es');
+  for(const[k,v] of Object.entries(d)){
+    const el=document.getElementById('t-'+k);
+    if(el){ if(k==='vehicle') el.innerHTML=v; else el.textContent=v; }
+  }
+  document.documentElement.lang=l;
+}
+
+// Auto-detect browser language
+const userLang = navigator.language || navigator.userLanguage || 'en';
+setLang(userLang.startsWith('es') ? 'es' : 'en');
+</script>
+</body>
+</html>
